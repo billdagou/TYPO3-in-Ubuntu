@@ -19,3 +19,5 @@
 	apt-get install nginx
 
 *实际步骤以[官方安装文档](http://nginx.org/en/linux_packages.html)为准*
+
+[>> MySQL](./MySQL.md)
