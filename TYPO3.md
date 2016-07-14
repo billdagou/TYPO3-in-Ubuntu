@@ -32,3 +32,5 @@
 	GRANT ALL ON domain.* TO 'typo3';
 
 浏览器访问`http://domain.site`进行后续安装。
+
+[>> 返回](./README.md)
