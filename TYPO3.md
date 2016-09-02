@@ -9,16 +9,16 @@
 
 	apt-get install graphicsmagick
 
-从[TYPO3官网](https://typo3.org/download/)下载最新版本（假设为v7.6.9）至`/var/www/`并解压
+从[TYPO3官网](https://typo3.org/download/)下载最新版本（假设为v7.6.10）至`/var/www/`并解压
 
 	cd /var/www/
-	wget https://get.typo3.org/7.6.9
-	tar xzf typo3_src-7.6.9.tar.gz
+	wget https://get.typo3.org/7.6.10
+	tar xzf 7.6.10
 
 安装前的准备工作
 
 	cd /var/www/domain.site/httpdocs
-	ln -fs /var/www/typo3_src-7.6.9 typo3_src
+	ln -fs /var/www/typo3_src-7.6.10 typo3_src
 	ln -fs typo3_src/index.php
 	ln -fs typo3_src/typo3
 	chown -R www-data:www-data *
@@ -33,4 +33,4 @@
 
 浏览器访问`http://domain.site`进行后续安装。
 
-[>> 返回](./README.md)
+[>> Node.js](./Node.js.md)
