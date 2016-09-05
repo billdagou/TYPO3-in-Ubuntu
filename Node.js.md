@@ -4,7 +4,9 @@
 
 从[Node.js官网](https://nodejs.org/en/download/)下载Node.js并安装
 
-在开发目录下，以命令行模式运行 `npm install`，根据提示创建 `package.json`
+*以下步骤默认在开发目录下操作*
+
+以命令行模式运行 `npm install`，根据提示创建 `package.json`
 
 	{
 		"description": "Project description here...",
@@ -97,6 +99,6 @@
 		grunt.registerTask('default', ['watch']);
 	};
 
-每次开发时，在开发目录下，以命令行模式运行 `grunt`
+每次开发时，以命令行模式运行 `grunt`
 
 [>> 返回](./README.md)
