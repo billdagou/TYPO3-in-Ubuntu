@@ -4,6 +4,8 @@
 
 从[Node.js官网](https://nodejs.org/en/download/)下载Node.js并安装
 
+详细安装步骤请参考 [这里](http://gruntjs.com/getting-started)
+
 *以下步骤默认在开发目录下操作*
 
 以命令行模式运行 `npm install`，根据提示创建 `package.json`
@@ -19,7 +21,7 @@
 
 	npm install -g grunt-cli
 
-安装 `grunt` 并保存至 `package.json` 中
+安装`grunt` 并保存至 `package.json` 中
 
 	npm install grunt --save-dev
 
