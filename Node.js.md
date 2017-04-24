@@ -25,8 +25,9 @@
 
 	npm install grunt --save-dev
 
-安装css（以 `grunt-contrib-stylus` 为例）、js（以 `grunt-contrib-uglify` 为例）、任务监控（以 `grunt-contrib-watch`为例）相关插件，并保存至 `package.json` 中
+安装HTML（以`grunt-contrib-htmlmin`为例）、css（以 `grunt-contrib-stylus` 为例）、js（以 `grunt-contrib-uglify` 为例）、任务监控（以 `grunt-contrib-watch`为例）相关插件，并保存至 `package.json` 中
 
+	npm install grunt-contrib-htmlmin --save-dev
 	npm install grunt-contrib-stylus --save-dev
 	npm install grunt-contrib-uglify --save-dev
 	npm install grunt-contrib-watch --save-dev
@@ -37,16 +38,39 @@
 		grunt.initConfig({
 			pkg: grunt.file.readJSON('package.json'),
 			dir: {
-				ext: 'typo3conf/ext/*/',
-				source: 'Resources/Private/',
-				build: 'Resources/Public/',
+				base: 'typo3conf/ext/*/',
+				private: 'Resources/Private/',
+				public: 'Resources/Public/',
+				html: {
+					path: 'Html/',
+					src: '**/*.html',
+				},
 				css: {
 					path: 'Stylus/',
-					src: '*.styl',
+					src: '**/*.styl',
 				},
 				js: {
 					path: 'Javascript/',
-					src: '*.js',
+					src: '**/*.js',
+				},
+			},
+			htmlmin: {
+				options: {
+					collapseWhitespace: true,
+					keepClosingSlash: true,
+					removeComments: true,
+				},
+				compress: {
+					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
+						return {
+							expand: true,
+							cwd: extPath + '<%= dir.private %><%= dir.html.path %>',
+							src: '<%= dir.html.src %>',
+							dest: extPath + '<%= dir.private %>',
+							ext: '.html',
+							flatten: false,
+						};
+					}),
 				},
 			},
 			stylus: {
@@ -54,10 +78,11 @@
 					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
 						return {
 							expand: true,
-							cwd: extPath + '<%= dir.source %><%= dir.css.path %>',
+							cwd: extPath + '<%= dir.private %><%= dir.css.path %>',
 							src: '<%= dir.css.src %>',
-							dest: extPath + '<%= dir.build %>Stylesheets/',
+							dest: extPath + '<%= dir.public %>Stylesheets/',
 							ext: '.css',
+							flatten: false,
 						};
 					}),
 				}
@@ -72,10 +97,11 @@
 					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
 						return {
 							expand: true,
-							cwd: extPath + '<%= dir.source %><%= dir.js.path %>',
+							cwd: extPath + '<%= dir.private %><%= dir.js.path %>',
 							src: '<%= dir.js.src %>',
-							dest: extPath + '<%= dir.build %>Javascript/',
+							dest: extPath + '<%= dir.public %>Javascript/',
 							ext: '.js',
+							flatten: false,
 						};
 					}),
 				}
@@ -85,16 +111,24 @@
 					interrupt: true,
 					livereload: true,
 				},
+				config: {
+					files: 'Gruntfile.js',
+				},
+				html: {
+					files: '<%= dir.base %><%= dir.private %><%= dir.html.path %><%= dir.html.src %>',
+					tasks: 'htmlmin',
+				},
 				css: {
-					files: '<%= dir.ext %><%= dir.source %><%= dir.css.path %><%= dir.css.src %>',
+					files: '<%= dir.base %><%= dir.private %><%= dir.css.path %><%= dir.css.src %>',
 					tasks: 'stylus',
 				},
 				js: {
-					files: '<%= dir.ext %><%= dir.source %><%= dir.js.path %><%= dir.js.src %>',
+					files: '<%= dir.base %><%= dir.private %><%= dir.js.path %><%= dir.js.src %>',
 					tasks: 'uglify',
 				},
 			},
 		});
+		grunt.loadNpmTasks('grunt-contrib-htmlmin');
 		grunt.loadNpmTasks('grunt-contrib-stylus');
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-watch');
