@@ -56,6 +56,7 @@
 			},
 			htmlmin: {
 				options: {
+					caseSensitive: true,
 					collapseWhitespace: true,
 					keepClosingSlash: true,
 					removeComments: true,
