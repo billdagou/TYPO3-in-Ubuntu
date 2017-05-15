@@ -1,6 +1,6 @@
-#Ubuntu 16.04♥中的TYPO3 —— Node.js
+# Ubuntu 16.04♥中的TYPO3 —— Node.js
 
-*Node.js对TYPO3本身来说，不是什么必须的功能，只是借助Grunt及相关插件对.css和.js进行相应的管理*
+*Node.js对TYPO3本身来说，不是什么必须的功能，只是借助Grunt及相关插件对图片、.html、.css和.js进行相应的管理*
 
 从[Node.js官网](https://nodejs.org/en/download/)下载Node.js并安装
 
@@ -25,9 +25,10 @@
 
 	npm install grunt --save-dev
 
-安装HTML（以`grunt-contrib-htmlmin`为例）、css（以 `grunt-contrib-stylus` 为例）、js（以 `grunt-contrib-uglify` 为例）、任务监控（以 `grunt-contrib-watch`为例）相关插件，并保存至 `package.json` 中
+安装HTML（以`grunt-contrib-htmlmin`为例）、图片（以`grunt-contrib-imagemin`为例）、css（以 `grunt-contrib-stylus` 为例）、js（以 `grunt-contrib-uglify` 为例）、任务监控（以 `grunt-contrib-watch`为例）相关插件，并保存至 `package.json` 中
 
 	npm install grunt-contrib-htmlmin --save-dev
+	npm install grunt-contrib-imagemin --save-dev
 	npm install grunt-contrib-stylus --save-dev
 	npm install grunt-contrib-uglify --save-dev
 	npm install grunt-contrib-watch --save-dev
@@ -44,6 +45,10 @@
 				html: {
 					path: 'Html/',
 					src: '**/*.html',
+				},
+				image: {
+					path: 'Image/',
+					src: '**/*.{gif,jpeg,jpg,png,svg}',
 				},
 				css: {
 					path: 'Stylus/',
@@ -69,6 +74,19 @@
 							src: '<%= dir.html.src %>',
 							dest: extPath + '<%= dir.private %>',
 							ext: '.html',
+							flatten: false,
+						};
+					}),
+				},
+			},
+			imagemin: {
+				compress: {
+					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
+						return {
+							expand: true,
+							cwd: extPath + '<%= dir.private %><%= dir.image.path %>',
+							src: '<%= dir.image.src %>',
+							dest: extPath + '<%= dir.public %>Images/',
 							flatten: false,
 						};
 					}),
@@ -119,6 +137,10 @@
 					files: '<%= dir.base %><%= dir.private %><%= dir.html.path %><%= dir.html.src %>',
 					tasks: 'htmlmin',
 				},
+				image: {
+					files: '<%= dir.base %><%= dir.private %><%= dir.image.path %><%= dir.image.src %>',
+					tasks: 'imagemin',
+				},
 				css: {
 					files: '<%= dir.base %><%= dir.private %><%= dir.css.path %><%= dir.css.src %>',
 					tasks: 'stylus',
@@ -130,6 +152,7 @@
 			},
 		});
 		grunt.loadNpmTasks('grunt-contrib-htmlmin');
+		grunt.loadNpmTasks('grunt-contrib-imagemin');
 		grunt.loadNpmTasks('grunt-contrib-stylus');
 		grunt.loadNpmTasks('grunt-contrib-uglify');
 		grunt.loadNpmTasks('grunt-contrib-watch');

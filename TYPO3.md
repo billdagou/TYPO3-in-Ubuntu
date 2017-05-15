@@ -1,4 +1,4 @@
-#Ubuntu 16.04♥中的TYPO3 —— TYPO3
+# Ubuntu 16.04♥中的TYPO3 —— TYPO3
 
 编辑`/etc/php/7.0/fpm/php.ini`
 
@@ -9,16 +9,16 @@
 
 	apt-get install graphicsmagick
 
-从[TYPO3官网](https://typo3.org/download/)下载最新版本（假设为v7.6.10）至`/var/www/`并解压
+从[TYPO3官网](https://typo3.org/download/)下载最新版本（假设为v8.7.1）至`/var/www/`并解压
 
 	cd /var/www/
-	wget https://get.typo3.org/7.6.10
-	tar xzf 7.6.10
+	wget https://get.typo3.org/8.7.1
+	tar xzf 8.7.1
 
 安装前的准备工作
 
 	cd /var/www/domain.site/httpdocs
-	ln -fs /var/www/typo3_src-7.6.10 typo3_src
+	ln -fs /var/www/typo3_src-8.7.1 typo3_src
 	ln -fs typo3_src/index.php
 	ln -fs typo3_src/typo3
 	chown -R www-data:www-data *

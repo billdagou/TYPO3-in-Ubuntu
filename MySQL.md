@@ -1,4 +1,4 @@
-#Ubuntu 16.04♥中的TYPO3 —— MySQL
+# Ubuntu 16.04♥中的TYPO3 —— MySQL
 
 直接APT安装
 
