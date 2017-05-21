@@ -40,8 +40,8 @@
 			pkg: grunt.file.readJSON('package.json'),
 			dir: {
 				base: 'typo3conf/ext/*/',
-				private: 'Resources/Private/',
-				public: 'Resources/Public/',
+				source: 'Resources/Private/',
+				build: 'Resources/Public/',
 				html: {
 					path: 'Html/',
 					src: '**/*.html',
@@ -70,9 +70,9 @@
 					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
 						return {
 							expand: true,
-							cwd: extPath + '<%= dir.private %><%= dir.html.path %>',
+							cwd: extPath + '<%= dir.source %><%= dir.html.path %>',
 							src: '<%= dir.html.src %>',
-							dest: extPath + '<%= dir.private %>',
+							dest: extPath + '<%= dir.source %>',
 							ext: '.html',
 							flatten: false,
 						};
@@ -84,9 +84,9 @@
 					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
 						return {
 							expand: true,
-							cwd: extPath + '<%= dir.private %><%= dir.image.path %>',
+							cwd: extPath + '<%= dir.source %><%= dir.image.path %>',
 							src: '<%= dir.image.src %>',
-							dest: extPath + '<%= dir.public %>Images/',
+							dest: extPath + '<%= dir.build %>Images/',
 							flatten: false,
 						};
 					}),
@@ -97,9 +97,9 @@
 					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
 						return {
 							expand: true,
-							cwd: extPath + '<%= dir.private %><%= dir.css.path %>',
+							cwd: extPath + '<%= dir.source %><%= dir.css.path %>',
 							src: '<%= dir.css.src %>',
-							dest: extPath + '<%= dir.public %>Stylesheets/',
+							dest: extPath + '<%= dir.build %>Stylesheets/',
 							ext: '.css',
 							flatten: false,
 						};
@@ -116,9 +116,9 @@
 					files: grunt.file.expand('typo3conf/ext/*/').map(function(extPath) {
 						return {
 							expand: true,
-							cwd: extPath + '<%= dir.private %><%= dir.js.path %>',
+							cwd: extPath + '<%= dir.source %><%= dir.js.path %>',
 							src: '<%= dir.js.src %>',
-							dest: extPath + '<%= dir.public %>Javascript/',
+							dest: extPath + '<%= dir.build %>Javascript/',
 							ext: '.js',
 							flatten: false,
 						};
@@ -134,19 +134,19 @@
 					files: 'Gruntfile.js',
 				},
 				html: {
-					files: '<%= dir.base %><%= dir.private %><%= dir.html.path %><%= dir.html.src %>',
+					files: '<%= dir.base %><%= dir.source %><%= dir.html.path %><%= dir.html.src %>',
 					tasks: 'htmlmin',
 				},
 				image: {
-					files: '<%= dir.base %><%= dir.private %><%= dir.image.path %><%= dir.image.src %>',
+					files: '<%= dir.base %><%= dir.source %><%= dir.image.path %><%= dir.image.src %>',
 					tasks: 'imagemin',
 				},
 				css: {
-					files: '<%= dir.base %><%= dir.private %><%= dir.css.path %><%= dir.css.src %>',
+					files: '<%= dir.base %><%= dir.source %><%= dir.css.path %><%= dir.css.src %>',
 					tasks: 'stylus',
 				},
 				js: {
-					files: '<%= dir.base %><%= dir.private %><%= dir.js.path %><%= dir.js.src %>',
+					files: '<%= dir.base %><%= dir.source %><%= dir.js.path %><%= dir.js.src %>',
 					tasks: 'uglify',
 				},
 			},
