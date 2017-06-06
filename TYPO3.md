@@ -1,9 +1,16 @@
 # Ubuntu 16.04♥中的TYPO3 —— TYPO3
 
-编辑`/etc/php/7.0/fpm/php.ini`
+编辑`/etc/php/7.0/mods-available/typo3.ini`
 
+	; configuration for typo3
+	; priority=30
 	max_execution_time=240
 	max_input_vars=1500
+
+启用typo3配置并重启PHP-FPM服务
+
+	phpenmod typo3
+	service php7.0-fpm restart
 
 安装ImageMagick/GraphicsMagick，推荐GraphicsMagick
 
