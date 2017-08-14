@@ -10,8 +10,9 @@
 
 	chown -R www-data:www-data /var/www/domain.site/httpdocs
 
-编辑`/etc/php/7.0/fpm/pool.d/www.conf`
+编辑`/etc/php/7.0/fpm/pool.d/zzz.conf`
 
+	[www]
 	listen_owner = nginx
 	listen_group = nginx
 
@@ -42,7 +43,7 @@
 
 	service nginx restart
 
-如需采用TCP socket（默认为Unix socket）方式连接，修改`/etc/php/7.0/fpm/pool.d/www.conf`
+如需采用TCP socket（默认为Unix socket）方式连接，修改`/etc/php/7.0/fpm/pool.d/zzz.conf`
 
 	listen = 127.0.0.1:9000
 
