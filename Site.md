@@ -13,8 +13,8 @@
 编辑`/etc/php/7.0/fpm/pool.d/zzz.conf`
 
 	[www]
-	listen_owner = nginx
-	listen_group = nginx
+	listen.owner = nginx
+	listen.group = nginx
 
 重启PHP-FPM
 
