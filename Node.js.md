@@ -1,23 +1,21 @@
-# Ubuntu 16.04♥中的TYPO3 —— Node.js
+# Ubuntu 18.04♥中的TYPO3 —— Node.js
 
-*Node.js对TYPO3本身来说，不是什么必须的功能，只是借助Grunt及相关插件对图片、.html、.css和.js进行相应的管理*
+借助Grunt及相关插件对图片、.html、.css和.js进行相应的管理。
 
-从[Node.js官网](https://nodejs.org/en/download/)下载Node.js并安装
+从[Node.js官网](https://nodejs.org/)下载Node.js并安装，Grunt详细安装步骤请参考 [这里](https://gruntjs.com/getting-started)
 
-详细安装步骤请参考 [这里](http://gruntjs.com/getting-started)
-
-*以下步骤默认在开发目录下操作*
+*以下操作步骤在开发目录下进行*
 
 以命令行模式运行 `npm install`，根据提示创建 `package.json`
 
 	{
 		"description": "Project description here...",
-		"repository": {},
-		"README": "",
 		"license": "GPL-2.0"
+		"README": "",
+		"repository": {},
 	}
 
-全局安装 `grunt-cli`
+全局安装`grunt-cli`，如果已经安装，请跳过此步
 
 	npm install -g grunt-cli
 
@@ -161,4 +159,4 @@
 
 每次开发时，以命令行模式运行 `grunt`
 
-[>> 返回](./README.md)
+[<< 返回](README.md)
