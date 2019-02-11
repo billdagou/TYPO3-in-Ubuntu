@@ -1,5 +1,7 @@
 # Ubuntu 18.04♥中的TYPO3 —— TYPO3
 
+**推荐使用TYPO3 v9**
+
 安装ImageMagick/GraphicsMagick，推荐ImageMagick
 
 	apt install imagemagick
@@ -24,7 +26,7 @@
 
 安装前的准备工作
 
-	cd /var/www/domain.site/httpdocs
+	cd /var/www/domain.tld/httpdocs
 	ln -fs /var/www/typo3_src-9.5.1 typo3_src
 	ln -fs typo3_src/index.php
 	ln -fs typo3_src/typo3
@@ -38,6 +40,6 @@
 	CREATE DATABASE domain DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 	GRANT ALL ON domain.* TO 'typo3';
 
-浏览器访问`http://domain.site`进行后续安装。
+浏览器访问`http://domain.tld`进行后续安装。
 
 [<< 返回](README.md)

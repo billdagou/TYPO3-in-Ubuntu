@@ -2,13 +2,13 @@
 
 **以下内容仅作为参考**
 
-创建站点根目录`/var/www/domain.site/httpdocs/`
+创建站点根目录`/var/www/domain.tld/httpdocs/`
 
-	mkdir -p /var/www/domain.site/httpdocs
+	mkdir -p /var/www/domain.tld/httpdocs
 
 设置用户和用户组
 
-	chown -R www-data:www-data /var/www/domain.site/httpdocs
+	chown -R www-data:www-data /var/www/domain.tld/httpdocs
 
 新建配置文件`/etc/php/7.2/fpm/pool.d/zzz.conf`（加载顺序需在`www.conf`之后）
 
@@ -25,15 +25,18 @@
 	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 
-新建站点配置文件`/etc/nginx/conf.d/domain.site.conf`
+新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 
 	server {
 		listen 80;
-		server_name domain.site;
-		access_log /var/www/domain.site/access.log main;
-		error_log /var/www/domain.site/error.log warn;
-		root /var/www/domain.site/httpdocs/;
+		server_name domain.tld;
+		
+		access_log /var/www/domain.tld/access.log;
+		error_log /var/www/domain.tld/error.log;
+		
+		root /var/www/domain.tld/httpdocs/;
 		index index.html index.htm index.php;
+		
 		location ~ \.php$ {
 			include fastcgi_params;
 		}
@@ -42,5 +45,7 @@
 重启Nginx
 
 	service nginx restart
+
+详细配置请参考[站点配置（完整版）](SiteConfiguration.md)
 
 [>> TYPO3](TYPO3.md)
