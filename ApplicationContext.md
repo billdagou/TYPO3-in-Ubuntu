@@ -9,7 +9,7 @@
         }
     }
 
-可选值为`Development`、`Production/Staging`、`Production`。
+可选值为`Production`、`Development`、`Testing`，更多详情请参考`\TYPO3\CMS\Core\Core\ApplicationContext`。
 
 重启Nginx
 
