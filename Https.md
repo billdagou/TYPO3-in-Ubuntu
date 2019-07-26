@@ -5,8 +5,6 @@
     server {
         listen 443 ssl;
         ...
-        ssl_certificate /path/to/ssl/certificate.crt;
-        ssl_certificate_key /path/to/ssl/certificate.key;
     }
 
 重启Nginx

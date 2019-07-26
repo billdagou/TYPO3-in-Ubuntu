@@ -37,7 +37,7 @@
 
 	mysql -uroot
 	CREATE USER typo3 IDENTIFIED BY 'password';
-	CREATE DATABASE domain DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+	CREATE DATABASE domain DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 	GRANT ALL ON domain.* TO 'typo3';
 
 浏览器访问`http://domain.tld`进行后续安装。
