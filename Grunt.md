@@ -72,6 +72,7 @@
 							src: '<%= dir.html.src %>',
 							dest: extPath + '<%= dir.source %>',
 							ext: '.html',
+							extDot: 'last',
 							flatten: false,
 						};
 					}),
@@ -85,6 +86,7 @@
 							cwd: extPath + '<%= dir.source %><%= dir.image.path %>',
 							src: '<%= dir.image.src %>',
 							dest: extPath + '<%= dir.build %>Images/',
+							extDot: 'last',
 							flatten: false,
 						};
 					}),
@@ -99,6 +101,7 @@
 							src: '<%= dir.css.src %>',
 							dest: extPath + '<%= dir.build %>Stylesheets/',
 							ext: '.css',
+							extDot: 'last',
 							flatten: false,
 						};
 					}),
@@ -118,6 +121,7 @@
 							src: '<%= dir.js.src %>',
 							dest: extPath + '<%= dir.build %>Javascript/',
 							ext: '.js',
+							extDot: 'last',
 							flatten: false,
 						};
 					}),
