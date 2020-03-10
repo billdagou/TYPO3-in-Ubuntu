@@ -11,7 +11,7 @@
 
 重启Nginx
 
-	service nginx restart
+    service nginx restart
 
 *实际配置以[官方文档](http://nginx.org/en/docs/http/converting_rewrite_rules.html)为准*
 

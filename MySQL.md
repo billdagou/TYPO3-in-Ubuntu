@@ -2,6 +2,6 @@
 
 安装MySQL Server
 
-	apt install mysql-server
+    apt install mysql-server
 
 [>> PHP](PHP.md)

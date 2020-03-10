@@ -19,6 +19,6 @@
 
 重启Nginx
 
-	service nginx restart
+    service nginx restart
 
 [<< 返回](README.md)

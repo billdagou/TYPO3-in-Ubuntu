@@ -43,7 +43,7 @@
 
 重启Nginx
 
-	service nginx restart
+    service nginx restart
 
 *详细配置以[官方文档](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)为准*
 

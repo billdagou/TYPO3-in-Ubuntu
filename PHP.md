@@ -13,7 +13,7 @@
 
 重启PHP-FPM服务
 
-	service php7.2-fpm restart
+    service php7.2-fpm restart
 
 如果有额外插件的需求，请自行安装。
 

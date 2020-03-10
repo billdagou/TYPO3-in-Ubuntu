@@ -4,47 +4,47 @@
 
 创建站点根目录`/var/www/domain.tld/httpdocs/`
 
-	mkdir -p /var/www/domain.tld/httpdocs
+    mkdir -p /var/www/domain.tld/httpdocs
 
 设置用户和用户组
 
-	chown -R www-data:www-data /var/www/domain.tld/httpdocs
+    chown -R www-data:www-data /var/www/domain.tld/httpdocs
 
 新建配置文件`/etc/php/7.2/fpm/pool.d/zzz.conf`（加载顺序需在`www.conf`之后）
 
-	[www]
-	listen.owner = nginx
-	listen.group = nginx
+    [www]
+    listen.owner = nginx
+    listen.group = nginx
 
 重启PHP-FPM
 
-	service php7.2-fpm restart
+service     php7.2-fpm restart
 
 编辑`/etc/nginx/fastcgi_params`，添加
 
-	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-	fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 
 新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 
-	server {
-		listen 80;
-		server_name domain.tld;
-		
-		access_log /var/www/domain.tld/access.log;
-		error_log /var/www/domain.tld/error.log;
-		
-		root /var/www/domain.tld/httpdocs/;
-		index index.html index.htm index.php;
-		
-		location ~ \.php$ {
-			include fastcgi_params;
-		}
-	}
+    server {
+        listen 80;
+        server_name domain.tld;
+
+        access_log /var/www/domain.tld/access.log;
+        error_log /var/www/domain.tld/error.log;
+
+        root /var/www/domain.tld/httpdocs/;
+        index index.html index.htm index.php;
+
+        location ~ \.php$ {
+            include fastcgi_params;
+        }
+    }
 
 重启Nginx
 
-	service nginx restart
+    service nginx restart
 
 详细配置请参考[站点配置（完整版）](SiteConfiguration.md)
 
