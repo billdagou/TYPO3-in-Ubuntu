@@ -1,4 +1,4 @@
-# Ubuntu 18.04♥中的TYPO3 —— 页面压缩
+# Ubuntu 20.04♥中的TYPO3 —— 页面压缩
 
 新建GZzip配置文件`/etc/nginx/conf.d/gzip.conf`
 

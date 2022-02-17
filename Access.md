@@ -1,4 +1,4 @@
-# Ubuntu 18.04♥中的TYPO3 —— 访问权限
+# Ubuntu 20.04♥中的TYPO3 —— 访问权限
 
 修改站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 

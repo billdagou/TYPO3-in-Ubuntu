@@ -1,4 +1,4 @@
-# Ubuntu 18.04♥中的TYPO3 —— 站点配置（完整）
+# Ubuntu 20.04♥中的TYPO3 —— 站点配置（完整）
 
 新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 

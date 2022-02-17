@@ -1,12 +1,12 @@
-# Ubuntu 18.04♥中的TYPO3 —— TYPO3
+# Ubuntu 20.04♥中的TYPO3 —— TYPO3
 
-**推荐使用TYPO3 v9**
+**推荐使用TYPO3 v10/11**
 
 安装ImageMagick/GraphicsMagick，推荐ImageMagick
 
     apt install imagemagick
 
-新建PHP配置文件`/etc/php/7.2/mods-available/typo3.ini`
+新建PHP配置文件`/etc/php/7.4/mods-available/typo3.ini`
 
     ; configuration for typo3
     ; priority=30
@@ -16,18 +16,18 @@
 启用配置文件并重启PHP-FPM服务
 
     phpenmod typo3
-    service php7.2-fpm restart
+    service php7.4-fpm restart
 
-从[TYPO3官网](https://get.typo3.org/)下载最新版本（假设为v9.5.1）至`/var/www/`并解压
+从[TYPO3官网](https://get.typo3.org/)下载最新版本（假设为v10.4.1）至`/var/www/`并解压
 
     cd /var/www/
-    wget --content-disposition get.typo3.org/9
-    tar xzf typo3_src-9.5.1.tar.gz
+    wget --content-disposition get.typo3.org/10
+    tar xzf typo3_src-10.4.1.tar.gz
 
 安装前的准备工作
 
     cd /var/www/domain.tld/httpdocs
-    ln -fs /var/www/typo3_src-9.5.1 typo3_src
+    ln -fs /var/www/typo3_src-10.4.1 typo3_src
     ln -fs typo3_src/index.php
     ln -fs typo3_src/typo3
     chown -R www-data:www-data *

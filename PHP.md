@@ -1,19 +1,14 @@
-# Ubuntu 18.04♥中的TYPO3 —— PHP
+# Ubuntu 20.04♥中的TYPO3 —— PHP
 
-**Ubuntu 18.04默认使用PHP7.2**
-
-激活`universe`（默认只有`main`），并更新
-
-    add-apt-repository universe
-    apt update
+**Ubuntu 20.04默认使用PHP7.4**
 
 安装PHP-FPM及相关插件
 
-    apt install php7.2-curl php7.2-fpm php7.2-gd php7.2-intl php7.2-mbstring php7.2-mysql php7.2-xml php7.2-zip
+    apt install php7.4-curl php7.4-fpm php7.4-gd php7.4-intl php7.4-mbstring php7.4-mysql php7.4-xml php7.4-zip
 
 重启PHP-FPM服务
 
-    service php7.2-fpm restart
+    service php7.4-fpm restart
 
 如果有额外插件的需求，请自行安装。
 

@@ -1,16 +1,24 @@
-# Ubuntu 18.04♥中的TYPO3 —— Nginx
+# Ubuntu 20.04♥中的TYPO3 —— Nginx
+
+安装依赖
+
+    apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 
 下载Key文件
 
-    wget https://nginx.org/keys/nginx_signing.key
+    curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
+        | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
 
-安装Key文件
+创建稳定版的APT源
 
-    apt-key add nginx_signing.key
+    echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+    http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
+        | sudo tee /etc/apt/sources.list.d/nginx.list
 
-新增APT源`/etc/apt/sources.list.d/nginx.list`
+设置优先级
 
-    deb http://nginx.org/packages/ubuntu bionic nginx
+    echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" \
+        | sudo tee /etc/apt/preferences.d/99nginx
 
 安装Nginx
 
