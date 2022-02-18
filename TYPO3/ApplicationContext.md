@@ -15,4 +15,4 @@
 
     service nginx restart
 
-[<< 返回](README.md)
+[<< 返回](../README.md)

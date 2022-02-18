@@ -20,4 +20,4 @@
 
 *实际配置以[官方文档](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return)为准*
 
-[<< 返回](README.md)
+[<< 返回](../README.md)

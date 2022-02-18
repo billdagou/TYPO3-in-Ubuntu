@@ -13,7 +13,7 @@
     phpenmod php
     service php7.4-fpm restart
 
-新建Nginx配置文件`/etc/nginx/conf.d/nginx.conf`
+新建/修改Nginx配置文件`/etc/nginx/conf.d/nginx.conf`
 
     client_max_body_size 16M;
 
@@ -21,4 +21,4 @@
 
     service nginx restart
 
-[<< 返回](README.md)
+[<< 返回](../README.md)

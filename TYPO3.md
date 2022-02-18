@@ -6,6 +6,25 @@
 
     apt install imagemagick
 
+编辑站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
+
+    server {
+        ...
+        location ~ [^/]\.php(/|$) {
+            ...
+            fastcgi_buffer_size 32k;
+            fastcgi_buffers 8 16k;
+            fastcgi_connect_timeout 240s;
+            fastcgi_read_timeout 240s;
+            fastcgi_send_timeout 240s;
+        }
+    }
+
+重启Nginx
+
+    service nginx restart
+
+
 新建PHP配置文件`/etc/php/7.4/mods-available/typo3.ini`
 
     ; configuration for typo3

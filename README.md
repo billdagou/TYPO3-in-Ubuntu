@@ -17,16 +17,18 @@
 
 可选配置
 * Nginx
-    * [站点重定向](Redirect.md)
-    * [Mime Types](MimeTypes.md)
-    * [页面压缩](GZip.md)
-    * [资源缓存](Expires.md)
-    * [HTTPS](Https.md)
+    * [资源缓存](Nginx/Expires.md)
+    * [页面压缩](Nginx/GZip.md)
+    * [HTTPS](Nginx/Https.md)
+    * [Mime Types](Nginx/MimeTypes.md)
+    * [站点重定向](Nginx/Redirect.md)
 * PHP
-    * [文件上传](Upload.md)
+    * [文件上传](PHP/Upload.md)
 * 站点
-    * [站点配置（完整）](SiteConfiguration.md)
+    * [站点配置（完整）](Site/Configuration.md)
 * TYPO3
-    * [应用上下文](ApplicationContext.md)
-    * [访问权限](Access.md)
-    * [Grunt](Grunt.md)
+    * [访问权限](TYPO3/Access.md)
+    * [应用上下文](TYPO3/ApplicationContext.md)
+    * [Grunt](TYPO3/Grunt.md)
+    * [资源压缩](TYPO3/GZip.md)
+    * [版本文件](TYPO3/Version.md)

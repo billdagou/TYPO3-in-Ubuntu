@@ -15,4 +15,4 @@
 
 *实际配置以[官方文档](http://nginx.org/en/docs/http/converting_rewrite_rules.html)为准*
 
-[<< 返回](README.md)
+[<< 返回](../README.md)

@@ -56,4 +56,4 @@
 
 *详细配置以[官方文档](http://nginx.org/en/docs/http/ngx_http_core_module.html#types)为准*
 
-[<< 返回](README.md)
+[<< 返回](../README.md)

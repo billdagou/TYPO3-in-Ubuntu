@@ -18,12 +18,7 @@
 
 重启PHP-FPM
 
-service     php7.4-fpm restart
-
-编辑`/etc/nginx/fastcgi_params`，添加
-
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+    service php7.4-fpm restart
 
 新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 
@@ -37,7 +32,17 @@ service     php7.4-fpm restart
         root /var/www/domain.tld/httpdocs/;
         index index.html index.htm index.php;
 
-        location ~ \.php$ {
+        location ~ [^/]\.php(/|$) {
+            fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+            if (!-f $document_root$fastcgi_script_name) {
+                return 404;
+            }
+
+            fastcgi_param HTTP_PROXY "";
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+            fastcgi_index index.php;
+
             include fastcgi_params;
         }
     }
@@ -46,6 +51,6 @@ service     php7.4-fpm restart
 
     service nginx restart
 
-详细配置请参考[站点配置（完整版）](SiteConfiguration.md)
+详细配置请参考[站点配置（完整版）](Site/Configuration.md)
 
 [>> TYPO3](TYPO3.md)

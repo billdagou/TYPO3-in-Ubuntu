@@ -47,4 +47,4 @@
 
 *详细配置以[官方文档](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)为准*
 
-[<< 返回](README.md)
+[<< 返回](../README.md)
