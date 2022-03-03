@@ -4,31 +4,31 @@
 
     map $sent_http_content_type $expires {
         default 1M;
-        
+
         text/css                              1y;
-        
+
         application/json                      0s;
         application/ld+json                   0s;
         application/schema+json               0s;
         application/vnd.geo+json              0s;
         application/xml                       0s;
         text/xml                              0s;
-    
+
         image/vnd.microsoft.icon              1w;
         image/x-icon                          1w;
-    
+
         text/x-component                      1M;
-    
+
         text/html                             0s;
-    
+
         application/javascript                1y;
         application/x-javascript              1y;
         text/javascript                       1y;
-    
+
         application/manifest+json             1w;
         application/x-web-app-manifest+json   0s;
         text/cache-manifest                   0s;
-    
+
         audio/ogg                             1M;
         image/bmp                             1M;
         image/gif                             1M;

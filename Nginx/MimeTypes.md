@@ -10,15 +10,15 @@
         application/rss+xml                         rss;
         application/vnd.geo+json                    geojson;
         application/xml                             rdf xml;
-        
+
         // JavaScript
         application/javascript                      js;
-        
+
         // Manifest files
         application/manifest+json                   webmanifest;
         application/x-web-app-manifest+json         webapp;
         text/cache-manifest                         appcache;
-        
+
         // Media files
         audio/mp4                                   f4a f4b m4a;
         audio/ogg                                   oga ogg opus;
@@ -30,14 +30,14 @@
         video/webm                                  webm;
         video/x-flv                                 flv;
         image/x-icon                                cur ico;
-        
+
         // Web fonts
         application/font-woff                       woff;
         application/font-woff2                      woff2;
         application/vnd.ms-fontobject               eot
         application/x-font-ttf                      ttc ttf;
         font/opentype                               otf;
-        
+
         // Other
         application/octet-stream                    safariextz;
         application/x-bb-appworld                   bbaw;
