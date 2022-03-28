@@ -13,13 +13,16 @@
         location / {
             try_files $uri $uri/ /index.php$is_args$args;
         }
+
         location = /typo3 {
             rewrite ^ /typo3/;
         }
+
         location /typo3/ {
             absolute_redirect off;
             try_files $uri /typo3/index.php$is_args$args;
         }
+
         location ~ [^/]\.php(/|$) {
             ...
             fastcgi_buffer_size 32k;
