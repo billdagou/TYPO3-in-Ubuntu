@@ -1,4 +1,4 @@
-# Ubuntu 20.04♥中的TYPO3 —— 资源缓存
+# Ubuntu 22.04♥中的TYPO3 —— 资源缓存
 
 新建缓存配置文件`/etc/nginx/conf.d/expires.conf`
 

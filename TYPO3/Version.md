@@ -1,4 +1,4 @@
-# Ubuntu 20.04♥中的TYPO3 —— 版本文件
+# Ubuntu 22.04♥中的TYPO3 —— 版本文件
 
 修改站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 

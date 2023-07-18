@@ -1,4 +1,4 @@
-# Ubuntu 20.04♥中的TYPO3 —— Node.js
+# Ubuntu 22.04♥中的TYPO3 —— Node.js
 
 借助Grunt及相关插件对图片、.html、.css和.js进行相应的管理。
 

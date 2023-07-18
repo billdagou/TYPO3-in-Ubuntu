@@ -1,4 +1,4 @@
-# Ubuntu 20.04♥中的TYPO3 —— 站点配置
+# Ubuntu 22.04♥中的TYPO3 —— 站点配置
 
 **以下内容仅作为参考**
 
@@ -10,7 +10,7 @@
 
     chown -R www-data:www-data /var/www/domain.tld/httpdocs
 
-新建配置文件`/etc/php/7.4/fpm/pool.d/zzz.conf`（加载顺序需在`www.conf`之后）
+新建配置文件`/etc/php/8.1/fpm/pool.d/zzz.conf`（加载顺序需在`www.conf`之后）
 
     [www]
     listen.owner = nginx
@@ -18,7 +18,7 @@
 
 重启PHP-FPM
 
-    service php7.4-fpm restart
+    service php8.1-fpm restart
 
 新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 
@@ -40,7 +40,7 @@
 
             fastcgi_param HTTP_PROXY "";
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+            fastcgi_pass unix:/run/php/php8.1-fpm.sock;
             fastcgi_index index.php;
 
             include fastcgi_params;

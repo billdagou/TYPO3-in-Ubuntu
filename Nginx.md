@@ -1,4 +1,4 @@
-# Ubuntu 20.04♥中的TYPO3 —— Nginx
+# Ubuntu 22.04♥中的TYPO3 —— Nginx
 
 安装依赖
 

@@ -1,4 +1,4 @@
-# Ubuntu 20.04♥中的TYPO3 —— MySQL
+# Ubuntu 22.04♥中的TYPO3 —— MySQL
 
 安装MySQL Server
 
