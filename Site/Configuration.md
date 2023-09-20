@@ -21,6 +21,27 @@
         ssl_certificate /path/to/ssl/certificate.crt;
         ssl_certificate_key /path/to/ssl/certificate.key;
 
+        location ~* /\.(?!well-known\/) {
+            deny all;
+        }
+        location ~* (?:\.(?:bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$ {
+            deny all;
+        }
+        location ~* composer\.(?:json|lock) {
+            deny all;
+        }
+        location ~* flexform[^.]*\.xml {
+            deny all;
+        }
+        location ~* locallang[^.]*\.xlf {
+            deny all;
+        }
+        location ~* ext_conf_template\.txt|ext_typoscript_constants\.(?:txt|typoscript)|ext_typoscript_setup\.(?:txt|typoscript) {
+            deny all;
+        }
+        location ~* /.*\.(?:bak|co?nf|cfg|ya?ml|ts|typoscript|dist|fla|in[ci]|log|sh|sql)$ {
+            deny all;
+        }
         location ~ _(?:recycler|temp)_/ {
             deny all;
         }
@@ -31,14 +52,6 @@
             deny all;
         }
         location ~ (?:typo3conf/ext|typo3/sysext|typo3/ext)/[^/]+/(?:Configuration|Resources/Private|Tests?|Documentation|docs?)/ {
-            deny all;
-        }
-
-        location ~* (?i:^\.|^#.*#|^(?:ChangeLog|ToDo|Readme|License)(?:\.md|\.txt)?|^composer\.(?:json|lock)|^ext_conf_template\.txt|^ext_typoscript_constants\.txt|^ext_typoscript_setup\.txt|flexform[^.]*\.xml|locallang[^.]*\.(?:xml|xlf)|\.(?:bak|co?nf|cfg|ya?ml|ts|typoscript|tsconfig|dist|fla|in[ci]|log|sh|sql(?:\..*)?|sqlite(?:\..*)?|sw[op]|git.*|rc)|.*~)$ {
-            deny all;
-        }
-
-        location ~* \.(?:git|svn|hg) {
             deny all;
         }
 
