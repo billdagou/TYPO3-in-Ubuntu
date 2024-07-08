@@ -1,6 +1,6 @@
-# Ubuntu 22.04♥中的TYPO3 —— TYPO3
+# Ubuntu 24.04♥中的TYPO3 —— TYPO3
 
-**推荐使用TYPO3 v12/11**
+**推荐使用TYPO3 v13/12**
 
 安装GraphicsMagick/ImageMagick，推荐GraphicsMagick
 
@@ -38,7 +38,7 @@
     service nginx restart
 
 
-新建PHP配置文件`/etc/php/8.1/mods-available/typo3.ini`
+新建PHP配置文件`/etc/php/8.3/mods-available/typo3.ini`
 
     ; configuration for typo3
     ; priority=30
@@ -48,7 +48,7 @@
 启用配置文件并重启PHP-FPM服务
 
     phpenmod typo3
-    service php8.1-fpm restart
+    service php8.3-fpm restart
 
 从[TYPO3官网](https://get.typo3.org/)下载最新版本（以v12.4.1例）至`/var/www/`并解压
 

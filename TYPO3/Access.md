@@ -1,4 +1,4 @@
-# Ubuntu 22.04♥中的TYPO3 —— 访问权限
+# Ubuntu 24.04♥中的TYPO3 —— 访问权限
 
 修改站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 

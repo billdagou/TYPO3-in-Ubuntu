@@ -1,4 +1,4 @@
-# Ubuntu 22.04♥中的TYPO3
+# Ubuntu 24.04♥中的TYPO3
 
 由于大部分操作都需要使用root权限，默认都以root用户操作
 

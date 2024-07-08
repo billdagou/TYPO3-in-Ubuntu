@@ -1,4 +1,4 @@
-# Ubuntu 22.04♥中的TYPO3 —— 资源压缩
+# Ubuntu 24.04♥中的TYPO3 —— 资源压缩
 
 修改站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 

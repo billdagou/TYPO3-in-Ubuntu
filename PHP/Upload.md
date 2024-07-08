@@ -1,6 +1,6 @@
-# Ubuntu 22.04♥中的TYPO3 —— 文件上传
+# Ubuntu 24.04♥中的TYPO3 —— 文件上传
 
-新建/修改PHP配置文件`/etc/php/8.1/mods-available/php.ini`
+新建/修改PHP配置文件`/etc/php/8.3/mods-available/php.ini`
 
     ; configuration for php
     ; priority=30
@@ -11,7 +11,7 @@
 启用配置文件并重启PHP-FPM服务
 
     phpenmod php
-    service php8.1-fpm restart
+    service php8.3-fpm restart
 
 新建/修改Nginx配置文件`/etc/nginx/conf.d/nginx.conf`
 

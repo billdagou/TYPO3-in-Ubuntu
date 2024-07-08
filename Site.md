@@ -1,4 +1,4 @@
-# Ubuntu 22.04♥中的TYPO3 —— 站点配置
+# Ubuntu 24.04♥中的TYPO3 —— 站点配置
 
 **以下内容仅作为参考**
 
@@ -10,7 +10,7 @@
 
     chown -R www-data:www-data /var/www/domain.tld/httpdocs
 
-新建配置文件`/etc/php/8.1/fpm/pool.d/zzz.conf`（加载顺序需在`www.conf`之后）
+新建配置文件`/etc/php/8.3/fpm/pool.d/zzz.conf`（加载顺序需在`www.conf`之后）
 
     [www]
     listen.owner = nginx
@@ -18,7 +18,7 @@
 
 重启PHP-FPM
 
-    service php8.1-fpm restart
+    service php8.3-fpm restart
 
 新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 

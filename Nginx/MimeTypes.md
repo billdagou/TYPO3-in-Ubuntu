@@ -1,4 +1,4 @@
-# Ubuntu 22.04♥中的TYPO3 —— Mime Types
+# Ubuntu 24.04♥中的TYPO3 —— Mime Types
 
 新建Mime Type配置文件`/etc/nginx/conf.d/mime.types.conf`
 

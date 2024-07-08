@@ -1,4 +1,4 @@
-# Ubuntu 22.04♥中的TYPO3 —— 站点配置（完整）
+# Ubuntu 24.04♥中的TYPO3 —— 站点配置（完整）
 
 新建站点配置文件`/etc/nginx/conf.d/domain.tld.conf`
 
@@ -80,7 +80,7 @@
 
             fastcgi_param HTTP_PROXY "";
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+            fastcgi_pass unix:/run/php/php8.3-fpm.sock;
             fastcgi_index index.php;
 
             include fastcgi_params;
