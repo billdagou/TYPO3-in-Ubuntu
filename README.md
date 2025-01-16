@@ -16,6 +16,8 @@
 5. [TYPO3](TYPO3.md)
 
 可选配置
+* MySQL
+    * [Binlog](MySQL/Binlog.md) 
 * Nginx
     * [资源缓存](Nginx/Expires.md)
     * [页面压缩](Nginx/GZip.md)
